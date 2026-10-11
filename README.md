@@ -38,3 +38,6 @@ on the final stop in the footer. Red is used nowhere else. Headings are sentence
 The site is now a single page per language (`/en/`, `/kr/`, `/ru/`): hero, Styles (kinetic ribbon), Artist, Process, Contact, footer.
 The header links scroll to sections. Contacts live in `src/content/contacts.ts` (WhatsApp, Telegram, Instagram, phone; KakaoTalk becomes a link when `kakao` is filled in).
 The red live dot rolls along the letters of each heading to its full stop; the hero and header logo breathe softly toward the brand red.
+
+## Publishing
+Live preview: https://septeamone.github.io/njtattoo/ . Update it with `sh scripts/deploy.sh` (builds with BASE_PATH=/njtattoo, pushes `out/` to the gh-pages branch). Search engines are told not to index it (see `src/lib/page.ts`).
