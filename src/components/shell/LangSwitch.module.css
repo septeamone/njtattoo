@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  gap: 4px;
+}
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-stretch: 112%;
+  color: color-mix(in srgb, currentColor 62%, transparent);
+  transition: color 200ms var(--ease-out);
+}
+.link:hover,
+.link[aria-current="true"] {
+  color: currentColor;
+}
+.link[aria-current="true"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}

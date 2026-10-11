@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "home": {
+      "title": "NJ.TATTOO — 서울의 타투 아티스트",
+      "description": "NJ.TATTOO는 서울의 타투 아티스트입니다. 다양한 스타일을 한 번에 한 분씩, 예약제로 작업합니다."
+    }
+  },
+  "nav": {
+    "home": "NJ.TATTOO 홈",
+    "styles": "스타일",
+    "artist": "아티스트",
+    "process": "프로세스",
+    "contact": "문의",
+    "menu": "메뉴",
+    "close": "닫기",
+    "main": "메인",
+    "languages": "언어",
+    "skip": "본문으로 건너뛰기",
+    "cta": "문의하기"
+  },
+  "home": {
+    "place": "대한민국 서울",
+    "appointment": "예약제로 운영합니다.",
+    "statement": {
+      "lines": [
+        "서울의",
+        "타투 아티스트."
+      ],
+      "text": "다양한 스타일을, 한 번에 한 분씩."
+    },
+    "role": "서울의 타투 아티스트",
+    "scroll": "스크롤",
+    "stylesTitle": "스무 가지 스타일",
+    "stylesNote": "메뉴판이 아니라 타투의 지도입니다.",
+    "stylesList": "스타일"
+  },
+  "artist": {
+    "lines": [
+      "모든 작업은",
+      "대화에서",
+      "시작합니다."
+    ],
+    "text": "도안은 당신의 몸을 위해 그려지고, 종이 위에서 다듬어진 뒤에야 피부에 옮겨집니다.",
+    "ledger": [
+      {
+        "k": "운영 방식",
+        "v": "예약제"
+      },
+      {
+        "k": "상담 언어",
+        "v": "영어, 한국어, 러시아어"
+      }
+    ]
+  },
+  "process": {
+    "title": "프로세스",
+    "steps": [
+      {
+        "name": "상담",
+        "text": "아이디어, 레퍼런스, 부위, 예산."
+      },
+      {
+        "name": "도안",
+        "text": "당신의 몸에 맞춘 맞춤 도안."
+      },
+      {
+        "name": "시술",
+        "text": "회복을 고려해 한 번 또는 여러 번에 나누어."
+      },
+      {
+        "name": "회복",
+        "text": "사후 관리 안내."
+      }
+    ]
+  },
+  "contact": {
+    "title": "문의",
+    "lead": "왓츠앱, 텔레그램, 인스타그램, 카카오톡으로 메시지를 보내주세요.",
+    "languages": "상담은 영어, 한국어, 러시아어로 진행됩니다.",
+    "base": "대한민국 서울",
+    "where": "위치",
+    "map": "네이버 지도에서 열기",
+    "mapNew": "(네이버 지도가 새 탭에서 열립니다)",
+    "channels": [
+      {
+        "id": "whatsapp",
+        "name": "왓츠앱"
+      },
+      {
+        "id": "telegram",
+        "name": "텔레그램"
+      },
+      {
+        "id": "instagram",
+        "name": "인스타그램"
+      },
+      {
+        "id": "kakao",
+        "name": "카카오톡"
+      }
+    ],
+    "sameNumber": "같은 번호",
+    "phone": "전화"
+  },
+  "footer": {
+    "base": "대한민국 서울",
+    "top": "맨 위로",
+    "rights": "© 2026 NJ.TATTOO"
+  },
+  "styles": [
+    {
+      "id": "realism",
+      "name": "리얼리즘"
+    },
+    {
+      "id": "bg",
+      "name": "블랙앤그레이"
+    },
+    {
+      "id": "colorRealism",
+      "name": "컬러 리얼리즘"
+    },
+    {
+      "id": "japanese",
+      "name": "재패니즈"
+    },
+    {
+      "id": "neoTraditional",
+      "name": "네오트래디셔널"
+    },
+    {
+      "id": "traditional",
+      "name": "트래디셔널"
+    },
+    {
+      "id": "blackwork",
+      "name": "블랙워크"
+    },
+    {
+      "id": "fineLine",
+      "name": "파인라인"
+    },
+    {
+      "id": "minimalism",
+      "name": "미니멀리즘"
+    },
+    {
+      "id": "geometric",
+      "name": "지오메트릭"
+    },
+    {
+      "id": "dotwork",
+      "name": "도트워크"
+    },
+    {
+      "id": "ornamental",
+      "name": "오너멘탈"
+    },
+    {
+      "id": "lettering",
+      "name": "레터링"
+    },
+    {
+      "id": "chicano",
+      "name": "치카노"
+    },
+    {
+      "id": "tribal",
+      "name": "트라이벌"
+    },
+    {
+      "id": "biomechanical",
+      "name": "바이오메카닉"
+    },
+    {
+      "id": "surrealism",
+      "name": "서리얼리즘"
+    },
+    {
+      "id": "watercolor",
+      "name": "워터컬러"
+    },
+    {
+      "id": "sketch",
+      "name": "스케치"
+    },
+    {
+      "id": "abstract",
+      "name": "어브스트랙트"
+    }
+  ]
+}

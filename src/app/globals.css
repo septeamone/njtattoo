@@ -1,0 +1,150 @@
+/* NJ.TATTOO — one system.
+   Ground: midnight. Ink: bone. Structure: hairlines. The red is the live full stop, and the address and phone in its colour. */
+:root {
+  --midnight: #0d1014;
+  --sunken: #090b0e;
+  --bone: #f2f0ed;
+  --steel: #9a9ea5;
+  --ink: #12151a;
+  --ink-soft: #52565d;
+  --hair: rgba(242, 240, 237, 0.16);
+  --hair-soft: rgba(242, 240, 237, 0.08);
+  --needle: #ff4938;
+  /* address and phone take the colour of the live dot; on a light block they take its darker twin to stay readable */
+  --sig: var(--needle);
+
+  --gutter: clamp(20px, 4vw, 64px);
+  --gap: clamp(12px, 1.6vw, 24px);
+  --container: 1600px;
+  --header-h: 72px;
+  /* content width and the left/right edge of the container, also on very wide screens */
+  --cw: min(100vw - 2 * var(--gutter), var(--container));
+  --edge: calc(var(--gutter) + max(0px, (100vw - 2 * var(--gutter) - var(--container)) / 2));
+
+  /* Roboto Flex is limited to Cyrillic by unicode-range, so it must come first: Archivo's generated
+     fallback (Arial) would otherwise answer for Cyrillic before it is reached. */
+  --font: var(--f-flex), var(--f-archivo), var(--f-kr), "Helvetica Neue", Arial, sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-cine: cubic-bezier(0.77, 0, 0.18, 1);
+
+  color-scheme: dark;
+}
+
+[data-tone="light"] {
+  --sig: #c9301f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--midnight);
+  color: var(--bone);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--bone);
+  color: var(--midnight);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Language-specific typesetting */
+:lang(ko) {
+  word-break: keep-all;
+  line-height: 1.7;
+}
+:lang(ru) {
+  hyphens: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip {
+  position: fixed;
+  left: var(--gutter);
+  top: 12px;
+  z-index: 2000;
+  padding: 10px 14px;
+  background: var(--bone);
+  color: var(--midnight);
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+.skip:focus {
+  transform: none;
+}
+
+@media (max-width: 899px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

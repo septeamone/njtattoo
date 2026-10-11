@@ -1,0 +1,48 @@
+.address {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  column-gap: 0.6em;
+  line-height: 1.3;
+  width: fit-content;
+  max-width: 100%;
+  color: var(--sig);
+}
+/* the glyph stands on the first line, as tall as its capitals */
+.icon {
+  width: 0.95em;
+  height: 0.95em;
+  margin-top: 0.17em;
+  transition: transform 260ms var(--ease-out);
+}
+.address:hover .icon,
+.address:focus-visible .icon {
+  transform: translateY(-2px);
+}
+.text {
+  display: block;
+}
+.en,
+.ko {
+  display: block;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  transition: text-decoration-color 200ms var(--ease-out);
+}
+.ko {
+  margin-top: 0.25em;
+}
+.address:hover .en,
+.address:hover .ko,
+.address:focus-visible .en,
+.address:focus-visible .ko {
+  text-decoration-color: currentColor;
+}
+.hint {
+  display: block;
+  margin-top: 0.7em;
+  font-size: 0.8em;
+  font-weight: 500;
+}

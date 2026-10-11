@@ -1,0 +1,43 @@
+.dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--needle);
+  transform-origin: 0 0;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* the dot breathes: its own scale is driven by script, so the breath lives on an inner layer */
+.dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--needle);
+  animation: dotBreath 4.4s ease-in-out infinite;
+}
+@keyframes dotBreath {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dot::before {
+    animation: none;
+  }
+}
+
+/* the full-screen menu is its own space: the dot waits outside it */
+:global(html[data-menu="open"]) .dot {
+  visibility: hidden;
+}

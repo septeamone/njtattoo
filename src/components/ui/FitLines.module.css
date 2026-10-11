@@ -1,0 +1,38 @@
+.block {
+  display: block;
+  width: 100%;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+.line {
+  display: flex;
+  justify-content: flex-start;
+  overflow: visible;
+}
+.right .line {
+  justify-content: flex-end;
+}
+.inner {
+  display: block;
+  white-space: nowrap;
+  line-height: 0.92;
+  /* sensible size before the script fits the line */
+  font-size: clamp(40px, 9vw, 140px);
+}
+:lang(ko) .block {
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+:lang(ko) .inner {
+  line-height: 1.04;
+}
+/* until fitted, keep the block invisible so unfitted type never flashes (shows anyway after 1.2s) */
+.block[data-fit="pending"] {
+  animation: reveal 0s linear 1.2s forwards;
+  opacity: 0;
+}
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}

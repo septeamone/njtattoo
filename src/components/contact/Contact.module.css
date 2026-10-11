@@ -1,0 +1,183 @@
+.page {
+  padding: clamp(96px, 16svh, 200px) var(--edge) clamp(64px, 10svh, 120px);
+}
+.head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  align-items: end;
+}
+.title {
+  --stop: 0.21em;
+  grid-column: 1 / 13;
+  margin-left: -0.04em;
+  font-size: clamp(48px, 10.5vw, 200px);
+  font-weight: 900;
+  font-stretch: 125%;
+  letter-spacing: -0.03em;
+  line-height: 0.82;
+  overflow-wrap: anywhere;
+}
+:lang(ko) .title {
+  font-size: clamp(48px, 11.5vw, 220px);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.lead {
+  grid-column: 1 / 8;
+  margin-top: clamp(28px, 5svh, 56px);
+  max-width: 22ch;
+  font-size: clamp(26px, 3vw, 46px);
+  font-weight: 300;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+/* the number is the one big thing on this page: condensed, set to the width of the column, heavier on hover */
+.call {
+  container-type: inline-size;
+  margin-top: clamp(40px, 8svh, 100px);
+}
+.number {
+  display: block;
+  margin-left: -0.02em;
+  font-size: 15.6cqw;
+  font-weight: 300;
+  font-stretch: 62%;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.08em;
+  white-space: nowrap;
+  transition: font-weight 360ms var(--ease-out);
+}
+.number:hover,
+.number:focus-visible {
+  font-weight: 800;
+}
+
+.list {
+  margin-top: clamp(40px, 8svh, 100px);
+  border-bottom: 1px solid var(--hair);
+}
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: clamp(14px, 2.4svh, 28px);
+  border-top: 1px solid var(--hair);
+}
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22em;
+  margin-left: -0.04em;
+  font-size: clamp(40px, 7.4vw, 132px);
+  font-weight: 300;
+  font-stretch: 62%;
+  line-height: 1.02;
+  letter-spacing: -0.012em;
+  transition: font-weight 260ms var(--ease-out);
+}
+:lang(ko) .name {
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+/* the glyph is set to the height of the capitals and sits on the baseline of the name */
+.glyph {
+  flex: none;
+  width: 0.62em;
+  height: 0.62em;
+  transition: color 200ms var(--ease-out), transform 360ms var(--ease-out);
+}
+/* the live links are underlined; the KakaoTalk row is plain text on the same number */
+a.name .label {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.12em;
+}
+.plain {
+  color: var(--steel);
+}
+a.name:hover,
+a.name:focus-visible {
+  font-weight: 800;
+}
+a.name:hover .glyph,
+a.name:focus-visible .glyph {
+  color: var(--sig);
+  transform: rotate(-8deg) scale(1.06);
+}
+.meta {
+  flex: none;
+  color: var(--bone);
+  font-size: clamp(18px, 2vw, 30px);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.same {
+  color: var(--steel);
+}
+
+.where {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  align-items: baseline;
+  margin-top: clamp(56px, 10svh, 120px);
+}
+.whereTitle {
+  grid-column: 1 / 5;
+  color: var(--steel);
+  font-size: 17px;
+  font-weight: 500;
+}
+.whereBody {
+  grid-column: 5 / 13;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+.city {
+  font-size: clamp(30px, 4vw, 64px);
+  font-weight: 300;
+  font-stretch: 78%;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+:lang(ko) .city {
+  font-stretch: 100%;
+  letter-spacing: -0.04em;
+}
+.address {
+  margin-top: 0;
+  font-size: clamp(20px, 2.4vw, 38px);
+}
+.langs {
+  margin-top: 0;
+  font-size: 19px;
+  color: var(--steel);
+}
+
+@media (max-width: 899px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .meta {
+    text-align: left;
+  }
+  .lead {
+    grid-column: 1 / 13;
+  }
+  .where {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+  .whereTitle,
+  .whereBody {
+    grid-column: 1;
+  }
+}

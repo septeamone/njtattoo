@@ -1,0 +1,38 @@
+.footer {
+  padding: clamp(48px, 8svh, 96px) var(--gutter) 28px;
+  background: var(--midnight);
+  color: var(--bone);
+}
+.inner {
+  max-width: var(--container);
+  margin-inline: auto;
+}
+.mark {
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-top: clamp(28px, 4svh, 48px);
+  padding-top: 18px;
+  border-top: 1px solid var(--hair);
+  font-size: 14px;
+  color: var(--steel);
+}
+.socials {
+  margin-block: -12px;
+}
+.top {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-block: -12px;
+  color: var(--bone);
+}
+.top:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}

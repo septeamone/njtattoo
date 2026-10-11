@@ -1,0 +1,32 @@
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--gutter);
+  background: var(--sunken);
+  color: var(--bone);
+  visibility: hidden;
+  clip-path: inset(100% 0 0 0);
+  pointer-events: none;
+}
+.label {
+  display: block;
+  font-size: clamp(48px, 13vw, 230px);
+  font-weight: 900;
+  font-stretch: 125%;
+  letter-spacing: -0.03em;
+  --stop: 0.21em;
+  line-height: 0.82;
+  overflow-wrap: anywhere;
+}
+
+.stop {
+  display: inline-block;
+  width: var(--stop, 0.17em);
+  height: var(--stop, 0.17em);
+  margin-left: 0.06em;
+  border-radius: 50%;
+  background: currentColor;
+}

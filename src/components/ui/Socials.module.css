@@ -1,0 +1,26 @@
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.link {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--bone);
+  transition: color 200ms var(--ease-out);
+}
+.glyph {
+  width: 22px;
+  height: 22px;
+  transition: transform 260ms var(--ease-out);
+}
+.link:hover,
+.link:focus-visible {
+  color: var(--sig);
+}
+.link:hover .glyph,
+.link:focus-visible .glyph {
+  transform: translateY(-3px);
+}

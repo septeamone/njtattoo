@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "home": {
+      "title": "NJ.TATTOO — tattoo artist in Seoul",
+      "description": "NJ.TATTOO is a tattoo artist in Seoul. Many styles, one client at a time, by appointment."
+    }
+  },
+  "nav": {
+    "home": "NJ.TATTOO, home",
+    "styles": "Styles",
+    "artist": "Artist",
+    "process": "Process",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "main": "Main",
+    "languages": "Language",
+    "skip": "Skip to content",
+    "cta": "Contact"
+  },
+  "home": {
+    "place": "Seoul, South Korea",
+    "appointment": "By appointment.",
+    "statement": {
+      "lines": [
+        "Tattoo artist",
+        "in Seoul."
+      ],
+      "text": "Many styles, one client at a time."
+    },
+    "role": "Tattoo artist in Seoul",
+    "scroll": "Scroll",
+    "stylesTitle": "Twenty styles",
+    "stylesNote": "A map of tattooing, not a menu.",
+    "stylesList": "Styles"
+  },
+  "artist": {
+    "lines": [
+      "Every piece",
+      "starts with",
+      "a conversation."
+    ],
+    "text": "The design is drawn for your body, refined on paper, and only then put on skin.",
+    "ledger": [
+      {
+        "k": "Practice",
+        "v": "By appointment"
+      },
+      {
+        "k": "Consultations",
+        "v": "English, Korean and Russian"
+      }
+    ]
+  },
+  "process": {
+    "title": "Process",
+    "steps": [
+      {
+        "name": "Consult",
+        "text": "Idea, references, placement, budget."
+      },
+      {
+        "name": "Draw",
+        "text": "A custom design, drawn for your body."
+      },
+      {
+        "name": "Ink",
+        "text": "One or more sessions, paced for healing."
+      },
+      {
+        "name": "Heal",
+        "text": "Aftercare guidance."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "Message on WhatsApp, Telegram, Instagram or KakaoTalk.",
+    "languages": "Consultations in English, Korean and Russian.",
+    "base": "Seoul, South Korea",
+    "where": "Where",
+    "map": "Open in Naver Map",
+    "mapNew": "(opens Naver Map in a new tab)",
+    "channels": [
+      {
+        "id": "whatsapp",
+        "name": "WhatsApp"
+      },
+      {
+        "id": "telegram",
+        "name": "Telegram"
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram"
+      },
+      {
+        "id": "kakao",
+        "name": "KakaoTalk"
+      }
+    ],
+    "sameNumber": "same number",
+    "phone": "Phone"
+  },
+  "footer": {
+    "base": "Seoul, South Korea",
+    "top": "Back to top",
+    "rights": "© 2026 NJ.TATTOO"
+  },
+  "styles": [
+    {
+      "id": "realism",
+      "name": "Realism"
+    },
+    {
+      "id": "bg",
+      "name": "Black & Grey"
+    },
+    {
+      "id": "colorRealism",
+      "name": "Color Realism"
+    },
+    {
+      "id": "japanese",
+      "name": "Japanese"
+    },
+    {
+      "id": "neoTraditional",
+      "name": "Neo-Traditional"
+    },
+    {
+      "id": "traditional",
+      "name": "Traditional"
+    },
+    {
+      "id": "blackwork",
+      "name": "Blackwork"
+    },
+    {
+      "id": "fineLine",
+      "name": "Fine Line"
+    },
+    {
+      "id": "minimalism",
+      "name": "Minimalism"
+    },
+    {
+      "id": "geometric",
+      "name": "Geometric"
+    },
+    {
+      "id": "dotwork",
+      "name": "Dotwork"
+    },
+    {
+      "id": "ornamental",
+      "name": "Ornamental"
+    },
+    {
+      "id": "lettering",
+      "name": "Lettering"
+    },
+    {
+      "id": "chicano",
+      "name": "Chicano"
+    },
+    {
+      "id": "tribal",
+      "name": "Tribal"
+    },
+    {
+      "id": "biomechanical",
+      "name": "Biomechanical"
+    },
+    {
+      "id": "surrealism",
+      "name": "Surrealism"
+    },
+    {
+      "id": "watercolor",
+      "name": "Watercolor"
+    },
+    {
+      "id": "sketch",
+      "name": "Sketch"
+    },
+    {
+      "id": "abstract",
+      "name": "Abstract"
+    }
+  ]
+}

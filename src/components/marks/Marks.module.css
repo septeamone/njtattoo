@@ -1,0 +1,35 @@
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+/* period slot: same colour as the letters; the live red dot sits on top of it */
+.slot,
+.slotLogo {
+  fill: currentColor;
+}
+/* before the live dot exists (no JavaScript, or before hydration) the logo's period is red itself */
+:global(html:not([data-dot="live"])) .slotLogo {
+  fill: var(--needle);
+}
+
+/* a very slow breath of the brand red through the letters: 4.4 s, the red rises to under half and falls back */
+.breath {
+  opacity: 0;
+  animation: breath 4.4s ease-in-out infinite;
+}
+@keyframes breath {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breath {
+    animation: none;
+  }
+}

@@ -1,0 +1,162 @@
+.intro {
+  position: relative;
+}
+.stage {
+  position: relative;
+}
+
+/* ---------- poster ---------- */
+.poster {
+  --njw: min(calc(var(--cw) * 0.62), 118svh);
+  --njh: calc(var(--njw) * 700 / 1894);
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+}
+.slotNj {
+  position: absolute;
+  left: var(--edge);
+  top: calc(var(--header-h) + 3.5svh);
+  width: var(--njw);
+}
+/* TATTOO is exactly as wide as NJ's letters (the mark's ink is 84.4% of its box; the rest is the full stop) */
+.slotTattoo {
+  position: absolute;
+  right: var(--edge);
+  bottom: max(32px, 5svh);
+  width: calc(var(--njw) * 0.8437);
+}
+/* who, where, how to reach: readable on the first screen, not footnotes */
+.info {
+  position: absolute;
+  left: var(--edge);
+  bottom: calc(max(32px, 5svh) + 44px);
+  max-width: 40ch;
+}
+.role {
+  font-size: clamp(20px, 1.9vw, 28px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.where {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--steel);
+}
+.addr {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.tel {
+  margin-top: 4px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 8px;
+}
+.contact {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}
+.scroll {
+  position: absolute;
+  left: var(--edge);
+  bottom: max(32px, 5svh);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--steel);
+}
+.scrollLine {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* ---------- statement ---------- */
+.statement {
+  padding: clamp(96px, 18svh, 220px) var(--edge) clamp(96px, 16svh, 200px);
+}
+.block {
+  /* as wide as the page allows, but never so wide that three lines outgrow the screen */
+  width: min(calc(var(--cw) * 11 / 12), calc((100svh - var(--header-h) - 9svh - 130px) / 0.6));
+  margin-left: auto;
+}
+.lines {
+  --stop: 0.19em;
+  width: 100%;
+}
+/* the sentence sits on the block's own left edge, so it shares the headline's axis */
+.text {
+  margin-top: clamp(24px, 4.5svh, 52px);
+  max-width: 34ch;
+  font-size: clamp(19px, 1.75vw, 27px);
+  font-weight: 300;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+/* ---------- pinned sequence (script + motion enabled) ---------- */
+:global(html[data-seq="on"]) .intro {
+  --run: 120svh;
+  height: calc(100svh + var(--run));
+}
+:global(html[data-seq="on"]) .stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+}
+:global(html[data-seq="on"]) .poster {
+  position: absolute;
+  inset: 0;
+  height: auto;
+}
+/* the header lockup takes over from these two slots */
+:global(html[data-seq="on"]) .slotNj,
+:global(html[data-seq="on"]) .slotTattoo {
+  visibility: hidden;
+}
+:global(html[data-seq="on"]) .statement {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: calc(var(--header-h) + 3svh) 6svh;
+  visibility: hidden;
+}
+
+/* ---------- small screens: NJ across the full width, TATTOO below right ---------- */
+@media (max-width: 899px) {
+  .poster {
+    --njw: var(--cw);
+  }
+  .info {
+    top: calc(var(--header-h) + 3.5svh + var(--njh) + 24px);
+    bottom: auto;
+  }
+  .scroll {
+    display: none;
+  }
+  .block {
+    width: var(--cw);
+  }
+  .text {
+    max-width: 30ch;
+  }
+}

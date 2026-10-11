@@ -1,0 +1,149 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: grid;
+  /* the header uses the content's 12 columns: logo at 1, navigation at 7 (the axis small text uses), language at the end */
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  align-items: center;
+  /* same left/right edge as the content container, also on very wide screens */
+  padding-inline: calc(var(--gutter) + max(0px, (100vw - 2 * var(--gutter) - var(--container)) / 2));
+  --fg: var(--bone);
+  --bg: var(--midnight);
+  color: var(--fg);
+  background: var(--bg);
+  transition:
+    background-color 300ms var(--ease-out),
+    color 300ms var(--ease-out);
+}
+.header[data-tone="light"] {
+  --fg: var(--ink);
+  --bg: var(--bone);
+}
+/* over the opening poster the bar is invisible */
+:global(html[data-top="1"]) .header {
+  background: transparent;
+}
+
+.lockup {
+  grid-column: 1 / 5;
+  justify-self: start;
+  --h: 22px;
+  position: relative;
+  display: block;
+  flex: none;
+  height: 44px;
+  /* NJ + gap + TATTOO, in units of the mark height (1894 + 0.3·700 + 2473.5 over 700) */
+  width: calc(var(--h) * 6.539);
+}
+/* The two marks sit absolutely so the opening sequence can lift them into the poster and set them back. */
+.lockNj,
+.lockTattoo {
+  position: absolute;
+  top: 50%;
+  display: block;
+  height: var(--h);
+  transform: translateY(-50%);
+}
+.lockNj {
+  left: 0;
+  width: calc(var(--h) * 1894 / 700);
+}
+.lockTattoo {
+  left: calc(var(--h) * 3.006);
+  width: calc(var(--h) * 2473.5 / 700);
+}
+/* on "/" the marks belong to the poster until the opening sequence is ready */
+:global(html[data-home="1"]:not([data-dock="ready"])) .lockNj,
+:global(html[data-home="1"]:not([data-dock="ready"])) .lockTattoo {
+  opacity: 0;
+}
+
+.nav {
+  grid-column: 7 / 10;
+}
+.nav ul {
+  display: flex;
+  gap: clamp(20px, 2.6vw, 40px);
+}
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 500;
+  font-stretch: 104%;
+  color: color-mix(in srgb, currentColor 84%, transparent);
+  transition: color 200ms var(--ease-out);
+}
+.link:hover,
+.link[aria-current="true"] {
+  color: currentColor;
+}
+.link[aria-current="true"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+.right {
+  grid-column: 10 / 13;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+:lang(ko) .link {
+  font-size: 16px;
+}
+/* the one way to reach the artist: always visible, on every page and every screen size */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 18px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: 104%;
+  box-shadow: inset 0 0 0 1px var(--fg);
+  transition:
+    background-color 200ms var(--ease-out),
+    color 200ms var(--ease-out);
+}
+.cta:hover,
+.cta[aria-current="true"] {
+  background: transparent;
+  color: var(--fg);
+}
+:lang(ko) .cta {
+  font-size: 16px;
+}
+@media (max-width: 1180px) {
+  .nav {
+    grid-column: 5 / 9;
+  }
+  .right {
+    grid-column: 9 / 13;
+  }
+  .nav ul {
+    gap: 18px;
+  }
+  .link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 899px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav,
+  .lang {
+    display: none;
+  }
+}
